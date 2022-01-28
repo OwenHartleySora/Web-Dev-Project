@@ -1,0 +1,56 @@
+<!-- No commas! -->
+<h1 class="index-h1 index tcenter">Articles</h1>
+<div class="bcenter">
+<p>Index.html.erb located in app/views/articles/index.html.erb</p>
+
+<p> Now with: <%= Article.public_count_articles %> articles and counting! </p>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+        <%= article.title %> 
+    </li>
+<!-- Testing sub-bullets with help from: https://www.computerhope.com/issues/ch001703.htm -->
+ <ul style="padding-bottom: 0;">
+  <li style="margin-left:-1.5em"> <%=h truncate(article.body, :length => 10) %> </li>
+  <!--<li style="margin-left:1em; padding-bottom: 1px;">Ft. computerhope.com</li>         -->
+ </ul>
+      <% end %>
+</ul>
+
+<!-- Start of all Lists -->
+<div class="tcenter">
+  <h2>Public Article List:</h2>
+  <ul>
+    <% @articles.each do |article| %>
+     <% unless article.archived? %>
+      <li><%= link_to article.title, article %></li>
+    <%end%>
+  <%end%>  
+  </ul>
+</div>
+
+<h2 class="tcenter">Full Article List:</h2>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <!-- <a href="<%= article_path(article) %>">
+        <%= article.title %>
+      </a>                                     -->
+      <%= link_to article.title, article %>
+    </li>
+  <% end %>
+    <li>
+        <%= link_to "Create New Article", new_article_path %>
+    </li>
+</ul>
+</div>
+<!-- End of all Lists -->
+</div>
+
+
+<!-- div creates a parent but anything specified specifically inside will overide the parent CSS-->
+<div class="index2">
+
+</div>
+<!-- I don't know why I need this here but when I removed it the whole page broke 🍝-->

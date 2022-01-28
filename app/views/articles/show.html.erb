@@ -1,0 +1,32 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<p>You are currently on <strong>show</strong>.html.erb</p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Don't Kill Me!!"
+                  } %></li>
+</ul>
+
+<!-- Renders comments via _comment.html.erb on every article type page -->
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<!-- Renders comments via _form.html.erb on every comments form render -->
+                          <!-- /form is the same as _form.html.erb in .../views/comments -->
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<!--Link to home-->     <!--Source: https://stackoverflow.com/questions/7955346/ruby-link-to-homeindex-path -->
+<button><%= link_to "Take me back", root_path %></button><br>
+
+<!-- Funny bottom image -->
+<br><div class="bottomArt">
+<div class = "bcenter"><%= image_tag ("/assets/Cat.png") %></div>
+<p class="tcenter">Looks like you've reached the bottom of the page</p>
+<p class="tcenter">Ain't that a crappy juncture, buddy?</p>
+</div>

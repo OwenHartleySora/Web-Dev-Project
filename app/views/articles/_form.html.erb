@@ -1,0 +1,40 @@
+<p>You are currently on <strong>form</strong>.html.erb</p>
+<%= form_with model: article do |form| %>
+
+  <!--Set View Status-->
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['Public', 'Private', 'Archived'], selected: 'Public' %>
+  </div>
+
+  <br>
+
+  <!--Set Title-->
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <!--Set Body Text-->
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+    <!--Finish Button-->
+  <div>
+    <%= form.submit %>
+  </div>
+
+  <!--Link to home-->     <!--Source: https://stackoverflow.com/questions/7955346/ruby-link-to-homeindex-path -->
+  <br><button><%= link_to "Take me back", root_path %></button>
+
+<% end %>

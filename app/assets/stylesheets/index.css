@@ -1,0 +1,56 @@
+.index-h1 {
+    color: rgb(0, 0, 129);
+}
+
+.index {
+    color: rgb(7, 7, 95);
+}
+
+.tcenter{
+    text-align: center;
+}
+
+.bcenter{
+    margin: auto;
+    width: 15%;
+}
+
+.bottomArt{
+    padding:20px;
+    background-color:rgb(97, 97, 168);
+    /*border*/
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    /*text*/
+    inline-size: nowrap;
+    font-size:20px;
+
+
+}
+
+li {
+    color: black;
+}
+
+/* Background of all pages color */
+body {
+    background-color: #436fc0 ;
+  } 
+
+/* Links have consistant color */
+a:link {
+    color: rgb(0, 0, 0);
+}
+a:hover {
+    color: rgb(0, 0, 0);
+}
+a:visited {
+    color: rgb(0, 0, 0);
+}
+
+/* Notes:
+* Use a slightly different font (Lora??)
+* Make colors appealing and interesting
+* Try aligning everything NOT along the edge but also be mobile friendly
+*/
