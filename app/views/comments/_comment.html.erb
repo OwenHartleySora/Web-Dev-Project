@@ -1,0 +1,23 @@
+    <!-- Displays the inside unless it has the archived status -->
+<% unless comment.archived? %>
+<br><div id="Comment">
+    <!-- calls the commenter data type for the field of commenter (basically look in comment and see what commenter is equal to) -->
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+    <!-- calls the commenter data type for the field of comment (basically look in comment and see what body is equal to) -->
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  
+  <p>
+    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+  </p>
+</div>
+<% end %>

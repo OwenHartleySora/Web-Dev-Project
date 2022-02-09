@@ -1,0 +1,14 @@
+<!--Remove browser border-->
+<style type = "text/css">
+*
+{
+  margin: 0; padding: 0;
+}
+</style>
+
+<h1>New Article</h1>
+
+<p>You are currently on <strong>new</strong>.html.erb</p>
+
+<%= render "form", article: @article %>
+<!-- Render then looks for "name".html.erb and then pastes all of that into that part of the page -->

@@ -1,0 +1,92 @@
+<span class="textFont noborder">
+<!--Remove browser border-->
+<style type = "text/css">
+*
+{
+  margin: 0; padding: 0;
+}
+</style>
+
+<!--Top Nav Bar-->
+<div class="topnav">
+  <a class="active"><%= link_to "Home", root_path %></a>
+  <!--<a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about"><%= link_to "Home", "about" %></a>-->
+</div>             
+
+<!--
+<div><button><%= link_to "Take me back", root_path %></button></div>
+-->
+
+<div class="articlebackdrop">
+  <div class="tcenter">
+
+
+    <!--Renders title-->
+    <h1 id="BodyPara" class="bcenter bigwidth" style="margin:auto width:90% text-indent:40px"><%= @article.title %></h1><br>
+
+      <!--NEXT TIME REMOVE THE BULLET POINTS!!!!!!!!-->
+    <!--Renders thumbnail if there is one-->
+    <div class="thumbnail_display tcenter eText">
+    <% if @article.thumbnail != nil %>
+      <div class = "thumbnail"><%= image_tag("/assets/#{@article.thumbnail}.png", alt:"Failure loading: '.../assets/#{@article.thumbnail}.png' the image is either missing or doesn't exist") %></div><br>
+        <% if @article.debug = true %>
+          <p>Image path: .../assets/<strong><%=@article.thumbnail %>.png</strong></p>
+        <%end%>
+    <% end %>
+    </div>
+
+    <!--Renders video if there is one--> <!--Help from:https://stackoverflow.com/questions/18010120/how-to-embed-youtube-videos-into-a-rails-app-dynamically and https://github.com/datwright/youtube_addy -->
+    <br>
+      <% if @article.video_id != "false" %>
+        <div class= "video"><%=raw YouTubeAddy.youtube_embed_url("http://youtu.be/#{@article.video_id}", 1440, 720) %></div>
+          <% if @article.debug = "True" %>
+            <p>Video id:<%=@article.video_id %></p><br>
+          <%end%>
+    <% end %>
+  </div>
+
+  <div id="BodyPara" class="bcenter bigwidth" style="margin:auto width:70% text-indent:40px">
+    <!--Renders body-->
+    <p><%= @article.body %></p>
+  </div>
+
+  <!--<p class="tcenter">You are currently on <strong>show</strong>.html.erb</p>-->
+
+
+
+
+
+  <br><div class="tcenter">
+  <!-- Renders comments via _form.html.erb on every comments form render -->
+                            <!-- /form is the same as _form.html.erb in .../views/comments -->
+  <div id="Comment" style="margin-top:0px">
+  <div class="tcenter">
+  <!-- Renders comments via _comment.html.erb on every article type page -->
+  <h2>Comments</h2>
+  <div class="bcenter"><%= render @article.comments %></div>
+  </div>
+
+
+
+  <h2>Add a comment!</h2>
+  <%= render 'comments/form' %>
+  </div>
+
+  <!--Link to home-->     <!--Help from: https://stackoverflow.com/questions/7955346/ruby-link-to-homeindex-path -->
+  <br><div class="btcenter"><button><%= link_to "Take me back", root_path %></button></div><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+</div>
+
+<!-- Funny bottom image -->
+<br><div class="bottomArt">
+  <div class = "tcenter"><%= image_tag ("/assets/Cat.png") %></div>
+  <p class="tcenter">Looks like you've reached the bottom of the page</p>
+  <!--<p class="tcenter">Ain't that a crappy juncture, buddy?</p>-->
+</div>
+
+</span>
+<!--End of article line do not cross ------------------------------------------------------------------------------------------------------------------------------->

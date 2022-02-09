@@ -1,0 +1,18 @@
+<!-- Creates a form for adding another comment -->
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['Public', 'Private', 'Archived'], selected: 'Public' %>
+  </div><br>
+  <div>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter, :required => true %>
+  </div>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body, :required => true %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

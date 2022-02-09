@@ -1,0 +1,318 @@
+
+/* Background of all pages color */
+body {
+    background-color: #436fc0;
+  } 
+
+.articlebackdrop {
+    margin:auto;
+    width:90%;
+    padding: 20px;
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+    background-color:rgb(88, 88, 185);
+}
+
+.index-h1 {
+    color: rgb(0, 0, 129);
+}
+
+.index {
+    color: rgb(7, 7, 95);
+}
+
+.tcenter{
+    text-align: center;
+}
+
+.bcenter{
+    margin: auto;
+    width: 50%;
+}
+
+.ccenter{
+    margin: auto;
+    width: 80%;
+}
+
+.acenter{
+    margin: auto;
+    width: 99%;
+}
+
+.bigwidth{
+    margin: auto;
+    width: 80%;
+}
+
+.bottomArt{
+    padding:20px;
+    background-color:rgb(97, 97, 168);
+    margin:0px;
+    /*border*/
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px 20px 0px 0px;
+    /*text*/
+    inline-size: nowrap;
+    font-size:20px;
+}
+
+.button{
+    color:blue;
+    height: 60px;
+    width: 150px;
+}
+
+li {
+    color: black;
+}
+
+.eText {
+    color:rgb(189, 240, 255);
+    text-decoration: underline rgb(66, 147, 194);
+}
+
+#EditNew .field {
+    width:auto;
+    height:auto;
+}
+
+#EditNew .ftitle {
+    width:auto;
+}
+
+#BodyPara {
+    padding:20px;
+    background-color: rgb(111, 159, 214);
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+}
+
+#Comment {
+    padding:20px;
+    background-color: rgb(111, 159, 214);
+    margin: auto;
+    width: 50%;
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+}
+
+
+/*Thumbnails*/
+.thumbnail_display{
+    padding:20px;
+    background-color: rgb(111, 159, 214);
+    margin: auto;
+    width: 50%;
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+}
+
+.thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    height: auto;
+    width: auto;
+}
+/*Dynamic scaling of videos [Not working]*/
+iframe {
+    max-width: 100%;
+    max-height: auto;
+    height: 720px;
+    width: 1440px;
+}
+
+/*Dynamic scaling of images*/
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*Bullet-less lists!*/
+.bgone {
+    list-style: none;
+}
+
+/*https://www.tutorialrepublic.com/faq/how-to-auto-resize-an-image-to-fit-into-a-div-container-using-css.php*/
+
+.miniThumb {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    width: 30%;
+}
+
+.textFont {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.fontNormalText {
+    font-size:15px;
+}
+
+.fontTitle {
+    font-size:50px;
+}
+
+.fontH1 {
+    font-size:30px;
+}
+
+/*Index Articles Display*/
+#index img {
+    max-width:380px;
+}
+
+.article{
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+    background-color:rgb(88, 88, 185);
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    justify-content:center;
+    flex:auto;
+    gap: 30px 10px;
+}
+
+.flexheader {
+    flex-basis: 100%;
+}
+
+.flexitem {
+    flex-basis:50%;
+}
+
+.articlebox{
+    /*padding: 20px;*/
+    max-width: 400px;
+    max-height:900px;
+
+    height:580px;
+
+    transform:-20px;
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+    background-color:rgb(138, 138, 252);
+
+    box-shadow: 0px 5px 10px 15px rgb(73, 73, 156);
+
+    align-self: flex-start;
+    /*margin-top:0%;
+    margin-bottom:0%;*/
+}
+
+/*WIP make the whole article box a link*/
+.boxlink{
+    display:block;
+    height:100%;
+    width:100%;
+}
+
+/*Removes browser border*/
+.noborder {
+  margin: 0; 
+  padding: 0;
+}
+
+.flexbumper {
+    flex-basis:100%;
+    max-height:2px;
+    height:2px;
+    color: rgb(88, 88, 185);
+    background-color:rgb(88, 88, 185);
+    border-style: solid;
+    border-width: 10px;
+}    
+
+.created {
+    color:darkgrey;
+    margin:20%;
+    text-align:end;
+    margin-top:0; 
+    translate:-10px;
+}
+
+.spaghetti{
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+    border-style: solid;
+    border-width:10px;
+    border-color:rgb(17, 17, 61);
+    border-radius:20px;
+    background-color:rgb(138, 138, 252);
+
+    margin-top:0%;
+    margin-bottom:0%;
+}
+
+/* Links have consistant color */
+a:link {
+    color: rgb(0, 0, 0);
+}
+a:hover {
+    color: rgb(0, 0, 0);
+}
+a:visited {
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* Nav bar from https://www.w3schools.com/howto/howto_js_topnav.asp */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+
+/* Notes:
+* Use a slightly different font (Lora??)
+* Make colors appealing and interesting
+* Try aligning everything NOT along the edge but also be mobile friendly
+*/

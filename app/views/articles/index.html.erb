@@ -1,0 +1,94 @@
+<!--Removes browser border-->
+<style type = "text/css">
+*
+{
+  margin: 0; padding: 0;
+}
+</style>
+
+<!--Top Nav Bar-->
+<div class="topnav">
+  <a class="active"><%= link_to "Home", root_path %></a>
+  <!--<a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about"><%= link_to "Home", "about" %></a>-->
+</div>          
+
+<span class="textFont noborder">
+<div id="index">
+<!-- No commas for multi-classing! -->
+<h1 class="index-h1 index tcenter">Owen Hartley's Cool Blog Thingy</h1>
+
+
+<div class="tcenter">
+  <p>You are currently on <strong>index</strong>.html.erb</p>
+
+  <p> Now with: <strong><%= Article.public_count_articles %></strong> articles and counting! </p>
+</div>
+
+<!--Box behind articles list-->
+<div class="article flex">
+  <h1 class="spaghetti flex" style="width:80%">Articles</h1><br>
+  <!--Render preview of all articles-->
+  <div class="bgone flex" style="padding:0">
+    <div class="flexbumper"></div>
+    <% @articles.each do |article| %>
+      <div class="articlebox flexitem">
+        <% if article.thumbnail != "false" %>
+          <p>
+            <%= link_to article do %>
+              <br><div class = "eText mini tcenter" style="margin-top:100% margin-bottom:1%"><%=image_tag("/assets/#{article.thumbnail}.png", alt:"") %></div></a>
+            <%end%>
+          </p>
+        <%end%>
+          <p>
+            <!--Title link-->
+            <strong><% unless article.archived? %>
+            <li class="tcenter"><%= link_to article.title, article %></li>
+            <%end%> </strong>
+          </p>
+            <!-- Testing sub-bullets with help from: https://www.computerhope.com/issues/ch001703.htm -->
+        <ul class="bgone ccenter" style="padding-bottom: 0;">
+          <li style="margin-left:-1.5em"> <%=h truncate(article.body, :length => 98) %> </li>
+        </ul><br>
+              <p class="ccenter created"> <%= article.created_at%> </p>
+      </div><br>
+
+    <%end%>
+  </div>
+  <div class="flexbumper"></div>
+</div>
+
+<!-- Start of all Lists -->
+
+<!-- <h2 class="tcenter">Public Article List:</h2>
+<div class="bcenter">
+  <ul>
+    <% @articles.each do |article| %>
+     <% unless article.archived? %>
+      <li><%= link_to article.title, article %></li>
+      <%end%>
+    <%end%>  
+  </ul>
+</div>                                          -->
+
+<h2 class="tcenter">Full Article List:</h2>
+<div class="bcenter">
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+    <li>
+        <%= link_to "Create New Article", new_article_path %>
+    </li>
+  </ul>
+</div>
+
+
+
+<!-- div creates a parent but anything specified specifically inside will overide the parent CSS-->
+</div>
+</span>
+<!-- I don't know why I need this here but when I removed it the whole page broke 🍝-->

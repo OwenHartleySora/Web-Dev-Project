@@ -1,0 +1,19 @@
+<div class="acenter">
+<h1>Edit Article</h1>
+
+<p>You are currently on <strong>edit</strong>.html.erb</p>
+
+<%= render "form", article: @article %>
+
+<% if @article.debug = "True" %>
+<!--Admin Actions control center-->
+<h2 class="tcenter">Admin Actions</h2>
+<ul class="ccenter">
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Don't Kill Me!!"
+                  } %></li>
+</ul><br>
+<%end%>
+</div>

@@ -1,0 +1,73 @@
+<p>You are currently on <strong>form</strong>.html.erb</p>
+<div id="EditNew" class="textFont">
+<%= form_with model: article do |form| %>
+
+  <!--Set View Status-->
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['Public', 'Private', 'Archived'], selected: 'Public' %>
+  </div>
+
+  <br>
+
+ <!--Set Thumbnail-->
+  <div>
+    <%= form.label :thumbnail %><br>
+    <%= form.text_field :thumbnail, :required => false%>
+    <% article.errors.full_messages_for(:thumbnail).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
+ <!--Set Video-->
+  <div>
+    <%= form.label :video_id %><br>
+    <%= form.text_field :video_id, :required => true %>
+    <% article.errors.full_messages_for(:video_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <!--Set Title-->
+  <div class="ftitle">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <!--Set Body Text-->
+  <div class="field">
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+  <div class="field">
+    <%= form.label :debug %><br>
+    <%= form.text_field :debug %><br>
+    <% article.errors.full_messages_for(:debug).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+
+    <!--Finish Button-->
+  <div>
+    <%= form.submit %>
+  </div>
+
+  <!--Link to home-->     <!--Source: https://stackoverflow.com/questions/7955346/ruby-link-to-homeindex-path -->
+  <br><button><%= link_to "Take me back", root_path %></button>
+
+<% end %>
+</div>
