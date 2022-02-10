@@ -32,7 +32,7 @@
     <% if @article.thumbnail != nil %>
       <div class = "thumbnail"><%= image_tag("/assets/#{@article.thumbnail}.png", alt:"Failure loading: '.../assets/#{@article.thumbnail}.png' the image is either missing or doesn't exist") %></div><br>
         <% if @article.debug = true %>
-          <p>Image path: .../assets/<strong><%=@article.thumbnail %>.png</strong></p>
+          <!--<p>Image path: .../assets/<strong><%=@article.thumbnail %>.png</strong></p>-->
         <%end%>
     <% end %>
     </div>
@@ -42,7 +42,7 @@
       <% if @article.video_id != "false" %>
         <div class= "video"><%=raw YouTubeAddy.youtube_embed_url("http://youtu.be/#{@article.video_id}", 1440, 720) %></div>
           <% if @article.debug = "True" %>
-            <p>Video id:<%=@article.video_id %></p><br>
+            <!--<p>Video id:<%=@article.video_id %></p><br>-->
           <%end%>
     <% end %>
   </div>
