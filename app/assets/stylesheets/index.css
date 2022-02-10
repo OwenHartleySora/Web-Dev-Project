@@ -309,7 +309,19 @@ a:visited {
     color: white;
   }
 
+  /*Credits to https://www.youtube.com/watch?v=jDDaOFr9nqQ*/
+  .skipnav{
+    background:blue;
+    padding: 0 0 .5rem 1.5rem;
+    border-radius: .25rem;
+    position: absolute;
+    transform: translateY(-120%);
+    transition: transform 325ms ease-in;
+  }
 
+  .skipnav:focus {
+      transform:translateY(0);
+  }
 
 /* Notes:
 * Use a slightly different font (Lora??)
