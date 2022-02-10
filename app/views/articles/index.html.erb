@@ -6,7 +6,9 @@
 }
 </style>
 <!--Skip Navigation-->
-<a class="skipnav">Skip Navigation</a>
+<div class="skipnav">
+<a><%= link_to "Skip Navigation", root_path %></a>
+</div>
 
 <!--Top Nav Bar-->
 <div class="topnav">
@@ -74,20 +76,21 @@
   </ul>
 </div>                                          -->
 
+<!--
 <h2 class="tcenter">Full Article List:</h2>
 <div class="bcenter">
   <ul>
     <% @articles.each do |article| %>
       <li>
-        <%= link_to article.title, article %>
+        <%= link_to article.title, article %> 
       </li>
     <% end %>
-    <!--<li>
+    <li>
         <%= link_to "Create New Article", new_article_path %>
-    </li>-->
+    </li>
   </ul>
 </div>
-
+-->
 
 
 <!-- div creates a parent but anything specified specifically inside will overide the parent CSS-->
